@@ -3,7 +3,7 @@ import FooterLogo from '@/assets/logo.png'
 const Footer = () => {
   return (
     <footer className="border-t border-[#1d1f22] bg-[#0F1115]">
-      <div className="flex min-h-[86px] items-center justify-between px-5 md:px-10">
+      <div className="flex min-h-86px items-center justify-between px-5 md:px-10">
         
         {/* Logo */}
         <div className="flex items-center gap-2">

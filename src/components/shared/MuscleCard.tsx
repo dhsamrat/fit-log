@@ -15,7 +15,7 @@ const MuscleCard = ({ muscle }: IMuscleCardProps) => {
       >
         <div className="group flex h-full flex-col overflow-hidden rounded-xl border border-[#25282e] bg-[#15171c] transition-all duration-300 hover:-translate-y-1 hover:border-[#ccff00]/40 hover:shadow-lg">
 
-          <div className="relative h-[180px] w-full overflow-hidden bg-[#101216] sm:h-[190px]">
+          <div className="relative h-180px w-full overflow-hidden bg-[#101216] sm:h-190px">
             <Image
               src={muscle.image}
               alt={muscle.name}
@@ -30,7 +30,7 @@ const MuscleCard = ({ muscle }: IMuscleCardProps) => {
           <div className="flex flex-1 flex-col p-5">
 
             {/* Muscle Groups */}
-            <div className="mb-3 flex min-h-[24px] flex-wrap gap-2">
+            <div className="mb-3 flex min-h-24px flex-wrap gap-2">
               {muscle.muscleGroups.map((group) => (
                 <span
                   key={group}
