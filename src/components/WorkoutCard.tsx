@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import type { Workout } from "@/types/workout";
 
@@ -61,12 +62,12 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
         </div>
 
         {/* Button */}
-        <button
-          type="button"
-          className="mt-5 w-full rounded-lg bg-black px-4 py-3 text-sm font-semibold text-white transition hover:bg-gray-800"
-        >
-          View Details
-        </button>
+        <Link
+  href={`/workout/${workout.id}`}
+  className="mt-5 block w-full rounded-lg bg-black px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-gray-800"
+>
+  View Details
+</Link>
       </div>
     </article>
   );
