@@ -1,3 +1,4 @@
+import WorkoutActions from "@/components/WorkoutActions";
 import Image from "next/image";
 import type { Workout } from "@/types/workout";
 
@@ -108,6 +109,9 @@ const WorkoutDetailsPage = async ({
           </div>
         </div>
       </div>
+
+      {/*Action */}
+      <WorkoutActions workout={workout} />
 
       {/* Instructions */}
       <section className="mt-12">
