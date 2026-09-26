@@ -47,7 +47,7 @@ const HomePage = () => {
 
       <p className="mb-6">Total Workouts: {workouts.length}</p>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {workouts.map((workout) => (
           <WorkoutCard key={workout.id} workout={workout} />
         ))}

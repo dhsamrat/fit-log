@@ -7,8 +7,9 @@ interface WorkoutCardProps {
 
 const WorkoutCard = ({ workout }: WorkoutCardProps) => {
   return (
-    <article className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-      <div className="relative mb-4 h-48 w-full overflow-hidden rounded-lg">
+    <article className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+      {/* Image */}
+      <div className="relative h-52 w-full">
         <Image
           src={workout.image}
           alt={workout.name}
@@ -17,22 +18,55 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
         />
       </div>
 
-      <h2 className="text-xl font-semibold text-gray-900">
-        {workout.name}
-      </h2>
+      {/* Content */}
+      <div className="p-5">
+        {/* Title + Rating */}
+        <div className="flex items-start justify-between gap-3">
+          <h2 className="text-xl font-bold text-gray-900">
+            {workout.name}
+          </h2>
 
-      <p className="mt-2 text-sm text-gray-500">
-        {workout.description}
-      </p>
+          <span className="shrink-0 rounded-full bg-yellow-100 px-2 py-1 text-sm font-medium text-yellow-700">
+            ⭐ {workout.rating}
+          </span>
+        </div>
 
-      <div className="mt-4 flex items-center justify-between text-sm">
-        <span>{workout.difficulty}</span>
-        <span>⭐ {workout.rating}</span>
-      </div>
+        {/* Description */}
+        <p className="mt-3 line-clamp-2 text-sm leading-6 text-gray-600">
+          {workout.description}
+        </p>
 
-      <div className="mt-2 flex justify-between text-sm text-gray-600">
-        <span>{workout.duration} min</span>
-        <span>{workout.caloriesBurned} kcal</span>
+        {/* Difficulty */}
+        <div className="mt-4">
+          <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
+            {workout.difficulty}
+          </span>
+        </div>
+
+        {/* Workout Info */}
+        <div className="mt-5 grid grid-cols-2 gap-3 border-t border-gray-100 pt-4">
+          <div>
+            <p className="text-xs text-gray-500">Duration</p>
+            <p className="mt-1 font-semibold text-gray-800">
+              {workout.duration} min
+            </p>
+          </div>
+
+          <div>
+            <p className="text-xs text-gray-500">Calories</p>
+            <p className="mt-1 font-semibold text-gray-800">
+              {workout.caloriesBurned} kcal
+            </p>
+          </div>
+        </div>
+
+        {/* Button */}
+        <button
+          type="button"
+          className="mt-5 w-full rounded-lg bg-black px-4 py-3 text-sm font-semibold text-white transition hover:bg-gray-800"
+        >
+          View Details
+        </button>
       </div>
     </article>
   );
